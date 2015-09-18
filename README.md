@@ -3,7 +3,7 @@ Example web service in Go using the Martini library, with some test endpoints an
 
 ### Running
 
-Run locally with "go run server.go" and it will listen on port 3000.
+Run locally with "go run server.go" and it will listen on port 3000. NOTE if you have an environment variable PORT then it will listen on that port instead by default.
 
 	Browse to "/" to see "Hello world".
 
