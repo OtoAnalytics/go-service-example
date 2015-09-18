@@ -3,19 +3,21 @@ package main
 import "github.com/go-martini/martini"
 
 func main() {
-  m := martini.Classic()
+	m := martini.Classic()
 
-  // Automatically serves static files from "public" directory. Add assets too:
-  m.Use(martini.Static("assets"))
+	// Martini automatically serves static files from "public" directory. As an example of adding an assets directory too:
+	m.Use(martini.Static("assets"))
 
-  m.Get("/", func() string {
-    return "Hello world!"
-  })
+	// Example of a root-level Get endpoint.
+	m.Get("/", func() string {
+		return "Hello world!"
+	})
 
-  m.Get("/locations", func() string {
-    return
-    })
+	// Example of a REST endpoint for a "locations" resource with GET for a specific entry.
+	m.Get("/locations/:id", func(params martini.Params) string {
+		return "Hello location " + params["id"]
+	})
 
-  m.Run()
+	// With the routes defined, start the server.
+	m.Run()
 }
-
