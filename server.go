@@ -1,6 +1,6 @@
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/masonoise/martini-test/Godeps/_workspace/src/github.com/go-martini/martini"
 
 func main() {
 	m := martini.Classic()
